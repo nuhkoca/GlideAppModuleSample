@@ -36,7 +36,7 @@ public class SampleAppGlideModule extends AppGlideModule {
         int memoryCacheSizeBytes = 1024 * 1024 * 20; // 20mb
         builder.setMemoryCache(new LruResourceCache(memoryCacheSizeBytes));
         builder.setDiskCache(new InternalCacheDiskCacheFactory(context, memoryCacheSizeBytes));
-        builder.setDefaultRequestOptions(requestOptions(context));
+        builder.setDefaultRequestOptions(requestOptions());
         builder.build(context);
     }
 
@@ -52,11 +52,11 @@ public class SampleAppGlideModule extends AppGlideModule {
         glide.getRegistry().replace(GlideUrl.class, InputStream.class, factory);
     }
 
-    private static RequestOptions requestOptions(Context context){
+    private static RequestOptions requestOptions(){
         return new RequestOptions()
                 .signature(new ObjectKey(
                         System.currentTimeMillis() / (24 * 60 * 60 * 1000)))
-                .override(200, 200)
+                .override(600, 200)
                 .centerCrop()
                 .encodeFormat(Bitmap.CompressFormat.PNG)
                 .encodeQuality(100)
