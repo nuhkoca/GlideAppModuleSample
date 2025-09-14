@@ -27,7 +27,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.github.bumptech.glide:glide:5.0.5'
     annotationProcessor 'com.github.bumptech.glide:compiler:5.0.5'
-    implementation 'com.github.bumptech.glide:okhttp3-integration:5.0.4'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:5.0.5'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
 }
